@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Adrian E. Camus" />
+        <title>El Ahorcado</title>
+        <link rel="icon" type="image/x-icon" href="assets/ahorcado.ico"/>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/ahorcado/css/styles.css" rel="stylesheet"/>
+        <link href="/ahorcado/css/ahorcado.css" rel="stylesheet" />
+
+    </head>
+    <body id="inicio">
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">El Ahorcado</h1>
+                        <h2 class="mx-auto mt-2 mb-5">Segundo Desafio ALURA Oracle Academy</h2>
+                        <a class="btn btn-primary" href="#juego">Jugar</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Juego -->
+        <section class="juego-section text-center" id="juego">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="ahorcado">
+                            <img class="imagen" src="/ahorcado/assets/img/base.svg" alt="Base Ahorcado">
+                            <img id="img1" class="imagen" src="/ahorcado/assets/img/1.svg" alt="Soga">
+                            <img id="img2" class="imagen" src="/ahorcado/assets/img/2.svg" alt="Cabeza">
+                            <img id="img3" class="imagen" src="/ahorcado/assets/img/3.svg" alt="Cuerpo">
+                            <img id="img4" class="imagen" src="/ahorcado/assets/img/4.svg" alt="Brazo Derecho">
+                            <img id="img5" class="imagen" src="/ahorcado/assets/img/5.svg" alt="Brazo Izquierdo">
+                            <img id="img6" class="imagen" src="/ahorcado/assets/img/6.svg" alt="Pierna Derecha">
+                            <img id="img7" class="imagen" src="/ahorcado/assets/img/7.svg" alt="Pierna Izquierda">
+                        </div>
+                        <input type="text" id="texto" onkeyup="mayusculas(this);">
+                    </div>
+                    <div class="info col-lg-8 p-4">
+                        <h3>Intentos <span id="intentos"></span>/7 - <span id="historial"></span></h3>
+                        <div id="guiones"></div>
+                        <div id="teclado">
+                            <div id="teclas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+    <footer class="text-white text-center" style="background-color: #23242a;">
+        <!-- Grid container -->
+                    <h5 class="text-uppercase mb-4 pb-1">About</a></h5>
+                    <p>
+                        El Clásico juego del Ahorcado en una aplicación WEB desarrollada solo con propósitos educativos en el marco del programa ONE-Oracle Next Education, para ser presentado en el Challenge Oracle ONE Sprint 02: Crea tu propio juego del ahorcado con Javascript.
+                    </p>
+                    <div class="mt-2">
+                        <!-- Dribbble -->
+                        <a type="button" class="btn btn-floating btn-sm footer-group" href="https://acamus79.github.io/" target="_blank1"><i class="fab fa-dribbble fa-3x"></i></a>
+                        <!-- Linkedin -->
+                        <a type="button" class="btn btn-floating btn-sm footer-group" href="https://www.linkedin.com/in/acamus79" target="_blank1"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <!-- Github -->
+                        <a type="button" class="btn btn-floating btn-sm footer-group" href="https://github.com/acamus79" target="_blank1"><i class="fab fa-github fa-3x"></i></a>
+                    </div>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://acamus79.github.io">acamus79</a>
+        </div>
+    </footer>
+
+    <script src="/ahorcado/js/game.js"></script>
+  
+</html>
