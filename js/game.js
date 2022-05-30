@@ -125,13 +125,13 @@ en cada caso recargo la pagina para volver a jugar
 function ahorcado() {
     // Reviso si quedan guiones
     if (!palabraMostrar.includes('_')) {
-        alert('Has ganado!!!');
+        alert('GANASTE!!! Felicitaciones');
         //Recargo la página para volver a jugar
         location.reload(true);
     }
     // Reviso intentos
     if (numIntentos == 0) {
-        alert('Has Perdido!!! La palabra era: ' + palabraAdivinar.join(''));
+        alert('FIN DEL JUEGO!!! La palabra era: ' + palabraAdivinar.join(''));
         //Recargo la página para volver a jugar
         location.reload(true);
     }
