@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //==== DECLARACION DE CONSTANTES ====
 //const completo = "1234567890abcdefghijklmnñopqrstuvwxyzç., ";
 //const querty = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
-const abc = "ABCDEFJHIJKLMNÑOPQRSTUVWXYZ"
+const abc = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 const idTeclas = document.getElementById("teclas");
 
 // ==== DECLARACION DE VARIABLES ====
@@ -95,8 +95,6 @@ function compara(e){
         if (!palabraAdivinar.includes(e)) {
             // Restamos un intento
             numIntentos -= 1;
-            //aca debo llamar a la funcion para que muestre u oculte imagen
-            mostrarImagen(numIntentos);
             // Guardo en el historial la letra pulsada por el usuario
             historialLetrasUsuario.push(e);
         }
@@ -106,8 +104,8 @@ ahorcado();
 }
 /*
 Funcion muestraJuego(): 
-Esta funcion solo muestra la palabra a adivinar, las letras acertadas
-y la cantidad de intentos restantes
+Esta funcion solo muestra la palabra a adivinar, las letras acertadas,
+la cantidad de intentos restantes y, las imagenes del ahorcado
 */
 function muestraJuego() {
     guiones.textContent = palabraMostrar.join(' ');
@@ -115,6 +113,8 @@ function muestraJuego() {
     document.getElementById("intentos").textContent = numIntentos;
     //Muestro las letras que ya selecciono el usuario
     document.getElementById("historial").textContent = historialLetrasUsuario.join(' ');
+    //aca debo llamar a la funcion para que muestre u oculte las partes del ahorcado
+    mostrarImagen(numIntentos);
 }
 
 /*
@@ -125,15 +125,19 @@ en cada caso recargo la pagina para volver a jugar
 function ahorcado() {
     // Reviso si quedan guiones
     if (!palabraMostrar.includes('_')) {
-        alert('GANASTE!!! Felicitaciones');
+        //llamo a la funcion para mostrar la imagen de ganar
+        winner()
         //Recargo la página para volver a jugar
-        location.reload(true);
+        setTimeout(function(){
+            location.reload(true);
+        },5000);
     }
     // Reviso intentos
     if (numIntentos == 0) {
-        alert('FIN DEL JUEGO!!! La palabra era: ' + palabraAdivinar.join(''));
-        //Recargo la página para volver a jugar
-        location.reload(true);
+        mostrarImagen(0);
+        setTimeout(function(){
+            location.reload(true);
+        },5000);
     }
 }
 /*
@@ -165,7 +169,22 @@ function mostrarImagen(numIntentos){
             document.getElementById("img1").style.visibility = "visible";
             break;
 }
+}
 
+/*
+Funcion winner(intentos):
+Con esta funcion simplemente vuelvo a ocultar las partes del ahorcado
+y muestro una con el mensaje de ganar
+*/
+function winner(){
+    document.getElementById("img7").style.visibility = "hidden";
+    document.getElementById("img6").style.visibility = "hidden";
+    document.getElementById("img5").style.visibility = "hidden";
+    document.getElementById("img4").style.visibility = "hidden";
+    document.getElementById("img3").style.visibility = "hidden";
+    document.getElementById("img2").style.visibility = "hidden";
+    document.getElementById("img1").style.visibility = "hidden";
+    document.getElementById("img8").style.visibility = "visible";
 }
 
 // ==== FIN ====
