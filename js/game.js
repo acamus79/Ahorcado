@@ -5,7 +5,7 @@
     juego del ahorcado con Javascript.
     Por su naturazleza este Script posee comentarios para poder ayudar 
     para seguir informacion en la consola se puede descomentar las líneas:
-    25 - 62 -  66 - 67 - 73 - 74 - 103
+    25 - 62 -  66 - 67 - 73 - 74 - 101
 */
 //Antes de ejecutar el script espera que toda la página se dibuje
 document.addEventListener('DOMContentLoaded', function () {
